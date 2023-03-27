@@ -1,0 +1,79 @@
+body,
+html {
+  height: 100%;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background-color: #fff;
+  border-radius: 1rem;
+
+  box-shadow: 0px 0px 30px #ddd;
+  border: 1px solid rgb(0 0 0 / 0.2);
+
+  width: 20rem;
+  height: 20rem;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  font-size: 1.5rem;
+
+  scale: 0;
+}
+
+.item img {
+  width: 100%;
+  height: 85%;
+}
+
+.item div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.item {
+  animation: 4s anim, 4s leave forwards;
+
+  animation-delay: calc(var(--i) * 2000ms);
+  z-index: calc(100 - var(--i));
+}
+
+@keyframes anim {
+  0% {
+    scale: 0;
+  }
+  30% {
+    scale: 1;
+  }
+}
+@keyframes leave {
+  60% {
+    left: 50%;
+    scale: 0.9;
+  }
+  100% {
+    left: -50%;
+    scale: 1.5;
+  }
+}
+
+@keyframes speshul {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
